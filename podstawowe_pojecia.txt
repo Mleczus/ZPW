@@ -1,0 +1,26 @@
+repozytorium - to takie miejsce np: "skrzynia" która 
+przechowuje najważniejsze pliki projektu i wszytkie ich zapisane zmiany
+
+github/bitbucket/gitlab - to platformy internetowe pozwalające na tworzenie, hostowanie i zarządzanie wspólnymi projektami oparte na systemie git
+
+git - to program pozwalający na kontrolowanie plików 
+i zmian w kodzie źródłowym oraz pozwala na łatwiejszą współprace nad projektami
+
+commit - to polecenie które tworzy punkt zapisu 
+i dodaje ten zapis do historii zmian. Moge to porównać do gry np:Hitman,
+w której można zrobić save’a przed trudnym etapem. 
+Jeśli np się wywale za zero (w tym przypadku wywali się aplikacja), 
+mogę wrócić do momentu sprzed zginięcia czyli sprzed momentu wywalenia aplikacji.
+
+branch - to taki "produkt testowy" który ma swoją własną ścieżkę 
+na której można aplikację w pełni testować zmieniać itd, ale nie ma 
+żadnego bezpośredniego wpływu na główną wersje aplikacji, chyba że go 
+później dołączymy do głównego brancha main
+
+git checkout - to polecenie które mówi gitowi na 
+jakim branchu chcemu pracować i przenosi nas na niego
+
+merge - łączy (scaluje) zmiany i historie z jednego brancha na drugi
+
+rebase - to polecenie które przenosi commity z jednego brancha
+ na aktualny stan drugiego dzieki czemu historia jest o wiele czystsza
