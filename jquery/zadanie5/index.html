@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" 
+    crossorigin="anonymous"></script>
+
+    <script>
+
+        $(function(){
+            $("a").eq(1).addClass("another_link");
+            $("a").eq(2).removeClass("link");
+
+            $("p").addClass("a");
+            $("p").addClass("b");
+
+            $("#przycisk").click(function(){
+                $("p").removeClass("a");
+                $("p").removeClass("b");
+                alert("SUKCES!")
+            })
+        })
+
+    </script>
+
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        ul {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        li:hover {
+            color: #007bff;
+            font-weight: bold;    
+        }
+
+        .link{
+            color: grey;
+            text-decoration: none;
+        }
+        
+        .another_link{
+            background-color: black;
+        }    
+
+        .completely_different_link{
+            background-color: yellow;
+        }
+
+        .a{
+            background-color: red;
+        }
+
+        .b{
+            font-size: 150%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lista Gier Komputerowych</h1>
+ 
+    <ul>
+        <li><a href="www.google.pl">Witcher 3: Wild Hunt</a></li>
+        <li><a href="www.google.pl">Cyberpunk 2077</a></li>
+        <li><a href="www.google.pl" class="link">Elden Ring</a></li>
+        <li><a href="www.google.pl">Baldur's Gate 3</a></li>
+    </ul>
+
+    <p>dadasd</p>
+
+    <button id="przycisk">Usuń klasy</button>
+</body>
+</html>
