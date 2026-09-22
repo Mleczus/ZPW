@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartkówka</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" 
+    crossorigin="anonymous"></script>
+
+    <style>
+    .wazne {
+        color: red;
+        font-weight: bold;
+        background-color: yellow;
+}
+
+    .gra {
+    font-weight: bold;
+}
+
+.nowa {
+    color: green;
+}
+    </style>
+
+
+
+    <script>
+        $(function(){
+            //ZAD 1
+            // $("li").eq(2).css({"color" : "red"});
+            // $("li").last().css("background-color", "yellow");
+            // $("li").eq(0).addClass("produkt");
+            // $("li").last().remove();
+
+            //ZAD 2
+            // $("a").first().attr("href", "https://www.google.com");
+            // $("a").eq(1).attr("style", "color : red");
+            // $("a").odd().css("background-color", "grey");
+            // $("a").last().addClass("important");
+
+            //ZAD 3
+        //     $("#dodaj").click(function(){
+        //     let $produkt = $("#produkt").val();
+
+        //     if(!$produkt == ""){
+        //         $("#lista").append("<li>" + $produkt + "</li>");
+        //         $("#produkt").val("");
+        //     }else{
+        //         alert("Wpisz produkt!");
+        //     }
+        // })
+
+            //ZAD 4
+            // $("#zgoda").click(function(){
+            //     if(this.checked){
+            //         $("#wyslij").removeAttr("disabled");
+            //     }else{
+            //         $("#wyslij").attr("disabled", "disabled")
+            //     }
+            // })
+
+            //ZAD 5
+            // let $licznik = 0;
+            // $("#klik").click(function(){
+            //     $licznik++;
+            //     $("#wynik").text("Kliknięcia: " + $licznik);
+            // })
+
+            //ZAD 6
+        //     $("#usun").click(function(){
+        //         if($("li").length === 0){
+        //         alert("Lista jest pusta!");
+        //     }else{
+        //         $("li").last().remove();
+        //     }
+        // })
+
+            //ZAD 7
+            // $("#dodaj").click(function(){
+            //     $("#tekst").addClass("wazne");
+            // })
+
+            // $("#usun").click(function(){
+            //     $("#tekst").removeClass("wazne");
+            // })
+
+            //ZAD 9
+            // $("#zatwierdz").click(function(){
+            //    let $imie = $("#imie").val();
+            //    let $wiek = $("#wiek").val();
+
+            //    if($imie == "" || $wiek == ""){
+            //     $("#komunikat").text("Uzupełnij wszystkie pola!");
+            //    }else{
+            //     $("#komunikat").text("Cześć " + $imie + ", masz " + $wiek + " lat!")
+            //    }
+            // })
+
+            //ZAD 10
+            let $licznik = $("#lista li").length;
+
+            $("#dodaj").click(function(){
+                let $gra = $("#gra").val();
+
+                if($gra == ""){
+                    alert("Podaj nazwę gry!");
+                }else{
+                    $("ul").append("<li>" + $gra + "</li>");
+                    $("li").last().addClass("gra");
+                    $("li").last().addClass("gra");
+                    $licznik++;
+                    $("#licznik").text("Liczba gier: " + $licznik);
+                    $("#gra").val("");
+                }
+            })
+    })
+    </script>
+</head>
+<body>
+    <!-- <ul id="lista">
+    <li>Chleb</li>
+    <li>Mleko</li>
+    <li>Ser</li>
+    <li>Masło</li>
+    <li>Jajka</li>
+</ul> -->
+
+<!-- <a href="#">Google</a>
+<a href="#">YouTube</a>
+<a href="#">Wikipedia</a>
+<a href="#">GitHub</a>
+<a href="#">Netflix</a> -->
+
+<!-- <input id="produkt" type="text">
+<button id="dodaj">Dodaj</button> -->
+
+<!-- <ul id="lista"></ul>
+
+<input type="checkbox" id="zgoda">
+<label>Zgadzam się</label>
+
+<button id="wyslij" disabled>Wyślij</button>
+
+<button id="klik">Kliknij mnie</button>
+<p id="wynik">Kliknięcia: 0</p>
+
+<ul id="gry">
+    <li>Minecraft</li>
+    <li>GTA V</li>
+    <li>Fortnite</li>
+    <li>Spider-Man</li>
+    <li>FNAF</li>
+</ul>
+
+<button id="usun">Usuń ostatnią</button> -->
+
+<!-- <p id="tekst">To jest mój tekst</p>
+
+<button id="dodaj">Dodaj klasę</button>
+<button id="usun">Usuń klasę</button> -->
+
+<!-- <input id="imie" type="text">
+<input id="wiek" type="text">
+
+<button id="zatwierdz">Zatwierdź</button>
+
+<p id="komunikat"></p> -->
+
+<input id="gra" type="text">
+<button id="dodaj">Dodaj grę</button>
+
+<ul id="lista">
+    <li>Minecraft</li>
+    <li>GTA V</li>
+    <li>FNAF</li>
+</ul>
+
+<p id="licznik">Liczba gier: 3</p>
+</body>
+</html>
