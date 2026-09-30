@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" 
+    crossorigin="anonymous"></script>
+
+    <script>
+        $(function(){
+            $("li").each(function(){
+                console.log("To jest element z id: " + this.id);
+            })
+
+            $("li").each(function(index, element){
+                console.log(index + ":" + $(this).text());
+            })
+
+            $("li").each(function(){
+                console.log($(this).attr("data-cena")); //to zwraca stringa
+                console.log($(this).data("cena")); //to zwraca inta
+            })
+
+            let suma = 0;
+
+            $("li").each(function(index){
+                suma += $(this).data("cena");
+
+                if(index % 2 == 0){
+                $(this).css("background-color", "grey");
+            }
+            })
+            $("#suma").text(suma);
+
+            $("li").each(function(){
+                let cena = $(this).data("cena");
+
+                if(cena > 20){
+                    $("li").addClass("drogie");
+                }
+            })
+
+            $("li").each(function(){
+                let cena = $(this).data("cena");
+                
+                if(cena > 20){
+                    $(this).css("background-color", "yellow").css("font-weight", "bold");
+                    return false;
+                }
+            })
+
+        })
+
+    </script>
+
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        ul {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        li:hover {
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <ul>
+        <li id="1" data-cena="25"><a href="#">Witcher 3: Wild Hunt</a></li>
+        <li id="2" data-cena="35"><a href="#">Cyberpunk 2077</a></li>
+        <li id="3" data-cena="45"><a href="#">Elden Ring</a></li>
+        <li id="4" data-cena=55><a href="#">Baldur's Gate 3</a></li>
+    </ul>     -->
+
+<ul id="lista">
+    <li data-cena="10">Chleb</li>
+    <li data-cena="25">Ser</li>
+    <li data-cena="5">Woda</li>
+    <li data-cena="40">Szynka</li>
+</ul>
+<p id="suma"></p>
+</body>
+</html>
