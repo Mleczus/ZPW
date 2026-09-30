@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" 
+    crossorigin="anonymous"></script>
+
+    <style>
+        #kwadrat{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+
+        #jablko{
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+        $(document).on("keypress keyup keydown", function(event){
+            $("#eventType").text(event.type)
+        })
+
+        $(document).on("mousemove", function(event){
+            $("#pageX").text(event.pageX);
+            $("#pageY").text(event.pageY);
+        })
+
+        $("#jablko").css({
+            "margin-left":Math.floor((Math.random() * 500) + 1),
+            "margin-top":Math.floor((Math.random() * 500) + 1)
+        })
+
+        let positonX = 0;
+        let positonY = 0;
+        $(document).on("keypress", function(event){
+            if(event.key == "d"){
+                positonX += 10;
+                $("#kwadrat").css("margin-left", positonX + "px")
+            }else if(event.key == "a"){
+                positonX -= 10;
+                $("#kwadrat").css("margin-left", positonX + "px")
+            }else if(event.key == "w"){
+                positonY -= 10;
+                $("#kwadrat").css("margin-top", positonY + "px")
+            }else if(event.key == "s"){
+                positonY += 10;
+                $("#kwadrat").css("margin-top", positonY + "px")
+            }
+        })
+    </script>
+
+</head>
+<body>
+    
+    <input type="text" id="pole">
+
+    <p>
+        Typ zdarzenia:
+        <span id="eventType">---</span>
+    </p>
+
+    <p>
+        Pozycja myszy:
+        X = <span id="pageX">---</span>,
+        Y = <span id="pageY">---</span>
+    </p>
+
+    <div id="kwadrat"></div>
+    <div id="jablko"></div>
+</body>
+</html>
