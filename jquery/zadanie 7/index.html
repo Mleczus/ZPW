@@ -33,13 +33,16 @@
             $("#pageY").text(event.pageY);
         })
 
-        $("#jablko").css({
+        let positonX = 0;
+        let positonY = 0;
+
+        $(document).ready(function(){
+            $("#jablko").css({
             "margin-left":Math.floor((Math.random() * 500) + 1),
             "margin-top":Math.floor((Math.random() * 500) + 1)
         })
+        })
 
-        let positonX = 0;
-        let positonY = 0;
         $(document).on("keypress", function(event){
             if(event.key == "d"){
                 positonX += 10;
@@ -53,6 +56,13 @@
             }else if(event.key == "s"){
                 positonY += 10;
                 $("#kwadrat").css("margin-top", positonY + "px")
+            }
+
+            if(positonX < parseInt($("#jablko").css("margin-left")) + 20 && positonX + 200 > parseInt($("#jablko").css("margin-left")) && positonY < parseInt($("#jablko").css("margin-top")) + 20 && positonY + 200 > parseInt($("#jablko").css("margin-top"))){
+                $("#jablko").css({
+                    "margin-left": Math.floor((Math.random() * 500) + 1),
+                    "margin-top": Math.floor((Math.random() * 500) + 1)
+                })
             }
         })
     </script>
