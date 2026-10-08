@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadania JQuery</title>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" 
+    crossorigin="anonymous"></script>
+
+    <style>
+        #blok1{
+            background-color: red;
+            height: 200px;
+            height: 200px;
+        }
+
+        #blok2{
+            background-color: yellow;
+            height: 200px;
+            height: 200px;
+        }
+
+        #blok3{
+            background-color: orange;
+            height: 200px;
+            height: 200px;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            // $("#ukryj").on("click", function(){
+            //     $("#tekst").hide();
+            // })
+
+            // $("#schowajKota").on("click", function(){
+            //     $("#kot").hide(2000);
+            // })
+
+            // $("#przycisk").on("click", function(){
+            //     $("#tajnawiadomosc").show();
+            // })
+
+            // $("#zapiszSie").on("click", function(){
+            //     $("#zapisano").show(1000);
+            // })
+
+            // $("#przelacz").on("click", function(){
+            //     $("#opis").toggle();
+            // })
+
+            // $("#podpowiedz").on("click", function(){
+            //     $("#tekst").toggle();
+            // })
+
+            // $("#blok1").on("click", function(){
+            //     $("#blok1").slideUp(2000);
+            // })
+
+            // $("#blok2").on("click", function(){
+            //     $("#blok2").slideDown(2000);
+            // })
+
+            $("#blok3").on("click", function(){
+                $("#blok3").slideToggle(40);
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <!-- <p id="tekst">Kliknij a zniknę</p>
+    <button id="ukryj">Ukryj</button>
+    <img src="kot.jpg" alt="kot" id="kot">
+    <button id="schowajKota">Schowaj kota</button>
+    <p id="tajnawiadomosc" style="display: none;">Pająk to debil!</p>
+    <button id="przycisk">Pokaż</button>
+
+    <p id="zapisano" style="display: none;">Dziękujemy za zapisanie się!</p>
+    <button id="zapiszSie">Zapisz się</button>
+
+    <p id="opis">Opis produktu</p>
+    <button id="przelacz">Pokaż/ukryj opis</button>
+
+    <input type="password" id="haslo">
+    <p id="tekst" style="display: none;">Hasło musi mieć min. 8 znaków</p>
+    <button id="podpowiedz">?</button> -->
+
+    <div id="blok1">1</div>
+    <div id="blok2">2</div>
+    <div id="blok3">3</div>
+
+</body>
+</html>
