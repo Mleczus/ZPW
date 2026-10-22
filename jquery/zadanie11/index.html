@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efekty jQuery</title>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+
+        <script>
+            $(function(){
+                // $("#sprawdz").click(function(){
+                //     let name = $("#imie").val().trim();
+
+                //     if(name === ""){
+                //         $("#blad").text("Pole jest wymagane!");
+                //     }else{
+                //         $("#blad").text("Twoje imie to: " + name);
+                //     }
+                // })
+
+                // $("#wyslij").submit(function(e){
+                //     e.preventDefault();
+
+                //     let nazwisko = $("#nazwisko").val().trim();
+
+                //     if(nazwisko === ""){
+                //         $("#info").text("Podaj nazwisko!").css("color", "red");
+                //     }else{
+                //         $("#info").text("Wysłano formularz!").css("color", "green");
+                //     }
+                // })
+
+//                 $("#sprawdzWiek").click(function() {
+//     let wartosc = $("#wiek").val().trim();
+//     let wiek = Number(wartosc);
+
+//     if (wartosc === "" || isNaN(wiek) || wiek < 0) {
+//         $("#blad").text("Wpisz poprawny wiek!");
+//     } else {
+//         $("#blad").text("Masz " + wiek + " lat!");
+//     }
+// });
+
+
+                $("#zapisz").click(function(){
+                    let ocena = $("#ocena").val();
+
+                    if(isNaN(ocena) || ocena === ""){
+                        $("#info").text("To nie jest liczba!");
+                    }else if(ocena >= 1 && ocena <= 6){
+                        $("#info").text("Zapisano ocenę: " + ocena)
+                    }else{
+                        $("#info").text("Ocena musi być z zakresu 1-6!");
+                    }
+                })
+            })
+        </script>
+</head>
+
+<body>
+
+<!-- <input type="text" id="imie">
+<button id="sprawdz">Sprawdź</button>
+<p id="blad"></p> -->
+
+<!-- <form>
+<input type="text" placeholder="Nazwisko..." id="nazwisko">
+<button id="wyslij">Wyślij</button>
+<P id="info"></P>
+</form>
+<hr>
+
+<input type="text" id="wiek">
+<button id="sprawdzWiek">Sprawdź</button>
+<p id="blad"></p> -->
+
+<input type="text" id="ocena">
+<button id="zapisz">Zapisz</button>
+<p id="info"></p>
+
+</body>
+</html>
