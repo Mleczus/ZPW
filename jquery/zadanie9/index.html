@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efekty jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+
+    <script>
+        $(function () {
+
+          
+            $("#formularzNick").on("submit", function (e) {
+                e.preventDefault();
+
+                const nick = $("#nick").val().trim();
+
+                if (nick === "") {
+                    $("#infoNick")
+                        .text("Podaj nick")
+                        .css("color", "red");
+                } else {
+                    $("#infoNick")
+                        .text("Witaj, " + nick)
+                        .css("color", "green");
+                }
+            });
+
+           
+            $("#formularzHaslo").on("submit", function (e) {
+                e.preventDefault();
+
+                const haslo = $("#haslo").val();
+
+                if (haslo.length < 6) {
+                    $("#infoHaslo")
+                        .text("Hasło jest za krótkie")
+                        .css("color", "red");
+                } else {
+                    $("#infoHaslo")
+                        .text("Zalogowano")
+                        .css("color", "green");
+                }
+            });
+
+         
+            $("#kolor").on("change", function () {
+                $("body").css("background", $(this).val());
+            });
+
+   $("#rozmiar").on("change", function () {
+                $("#a").text("Do zapłaty: ", $(this).val(), "zł");
+            });
+            
+        });
+    </script>
+</head>
+
+<body>
+
+    <h3>Formularz z nickiem</h3>
+
+    <form id="formularzNick">
+        <input type="text" id="nick" placeholder="Podaj nick">
+        <button type="submit">Wyślij</button>
+    </form>
+
+    <p id="infoNick"></p>
+
+    <hr>
+
+    <h3>Formularz z hasłem</h3>
+
+    <form id="formularzHaslo">
+        <input type="email" id="email" placeholder="Podaj email">
+        <input type="password" id="haslo" placeholder="Podaj hasło">
+        <button type="submit">Wyślij</button>
+    </form>
+
+    <p id="infoHaslo"></p>
+
+    <hr>
+
+    <h3>Zmiana koloru tła</h3>
+
+    <select id="kolor">
+        <option value="white">Biały</option>
+        <option value="yellow">Żółty</option>
+        <option value="lightblue">Niebieski</option>
+    </select>
+
+<hr></hr>
+<select id="rozmiar">
+    <option value="20">Mała</option>
+    <option value="30">Średnia</option>
+    <option value="40">Duża</option>
+</select>
+<p id="a"></p>
+</body>
+
+</html>

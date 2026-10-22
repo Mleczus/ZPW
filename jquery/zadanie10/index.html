@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efekty jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+
+    <script>
+$(function(){
+    $("#newsletter").change(function(){
+        if($(this).is(":checked")){
+            $("#stan").text("Zapisano do newsletter")
+        }else{
+             $("#stan").text("Wypisano do newsletter")
+        }
+    })
+    $("#accept").change(function(){
+        if($(this).is(":checked")){
+            $("#rejestr").prop("disabled", false)
+        }else{
+            $("#rejestr").prop("disabled", true)
+        }
+    })
+
+    $("#tekst").on("input", function(){
+$("#podglad").text($(this).val())
+    })
+
+    $("#komentarz").on("input", function(event){
+        licznik = 100 - $(this).val().length;
+        $("#licznik").text("Zostało znakow: " + licznik)
+        if(licznik <= 10){
+            $("#licznik").css("color", "red")
+        }else{
+            $("#licznik").css("color", "black")
+        }
+    })
+
+})
+    </script>
+</head>
+
+<body>
+<input type="checkbox" id="newsletter">Chcę newsletter
+<p id="stan"></p>
+<hr>
+<input type="checkbox" id="accept">Akceptuje Regulamin
+<button id="rejestr" disabled>Zarejestruj</button>
+<hr>
+<input type="text" id="tekst">
+<p>Podgląd: <span id="podglad"></span></p>
+<hr>
+<textarea name="kom" id="komentarz"></textarea>
+<p id="licznik"></p>
+</body>
+
+</html>
