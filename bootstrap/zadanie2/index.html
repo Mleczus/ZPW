@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- suma zawsze ma być 12 + każdy element, który przekroczy przechodzi do nowej linii -->
+    <div class="container">
+        <div class="row">
+        <div class="col-6 bg-primary text-white">col-6</div>
+        <div class="col-4 bg-success text-white">col-4</div>
+        <div class="col-2 bg-danger text-white">col-4</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- nie wstawiamy tekstu bez col na czysto do row -->
+    <div class="container">
+        <div class="row bg-light">
+            <div class="col-12">Tekst</div>
+            <div class="col-6 bg-primary text-white">Kolumna 1</div>
+            <div class="col-6 bg-success text-white">Kolumna 2</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- 0-5 + auto -->
+
+    {odstęp}{kierunek}-{rozmiar ekranu}-{wartość}
+    odstęp - p - padding, m - margin
+
+    kierunek - t(góra), b(dół), s(left), e(right), x(lewo prawo), y(góra dół), brak wartości(wszyskie strony)
+
+    col-6(ekran od 0px), col-sm-6(ekran od 576px), col-md-6(ekran od 768px), col-lg-4(ekran od 992px), col-xl-3(ekran od 1200px), col-xxl-2(ekran od 1400px)
+
+    <div class="bg-warning">
+        <div class="m-4 bg-primary text-white">m-4: Odstęp NA ZEWNĄTRZ niebieskeigo pola</div>
+    </div>
+
+    <div class="bg-warning">
+        <div class="p-4 bg-primary text-white">p-4: Odstęp WEWNĄTRZ niebieskeigo pola</div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
+</body>
+</html>
